@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DDI CASTER INTRODUCTION</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <!-- Stylesheets -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="{{url_for('static', filename='styles/product_page.css')}}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/forecastr_v4.js')}}" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h3 class="data-narrative-logo"><a href="/step1">DDI CASTER</a></h3>
+            <nav>
+                <ul class="nav-bar">
+                    <li><a class='nav-link' href="/">about app</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="jumbotron">
+
+            <h1 class='headline'>Who we are</h1>
+            <a class='primary-cta' data-element='primary' href="/step1">Build a DDI CASTER Now</a>
+            <img class='hero-image' src="{{url_for('static', filename='img/app.png')}}"/>
+
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <section class='content'>
+            <h1 class='headline'>Purpose</h1>
+            <br><img id='purpose-image' src="{{url_for('static', filename='img/purpose.png')}}"/>
+        </section>
+
+    </div>
+
+    <div class="container">
+
+        <section class='content'>
+            <h1 class='headline'>How to use</h1>
+
+            <h2>In 3 Easy Steps</h2>
+            <h4 class='subheading'>In 3 simple steps, You can easily find information between drugs. <br/> No sign-up is required and the retrieved data is not stored on our servers.</h4>
+            <br><img id='use-image' src="{{url_for('static', filename='img/use.png')}}"/>
+
+
+        </section>
+
+    </div>
+
+    <div class="container">
+
+        <section class='content'>
+            <h1 class='headline'>Benefit</h1>
+            <br><img id='benefit-image' src="{{url_for('static', filename='img/benefit.png')}}"/>
+
+
+        </section>
+
+    </div>
+
+    <div class="container">
+
+
+
+        <div id='source-content'>
+
+            <h2>Source</h2>
+            <p>DDI CASTER Version 0.1</p>
+            <ul id = 'source'>
+                <li>forecastr ALPHA</li>
+                <li>Drug Bank</li>
+                <li>String DB</li>
+                <li>Cytoscape</li>
+                <li>Gene Ontology</li>
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+    <footer class="footer">
+
+        <ul>
+            <li><h4>About</h4></li>
+            <li><a data-element='outbound-cta' data-val='https://forecastr-io.herokuapp.com/app/' href="https://forecastr-io.herokuapp.com/app/">forecastr ALPHA</a></li>
+            <li>This is a site referring to UI and operation modules.</li>
+            <br/>
+            <li>MADE BY HUFS BIOMEDICAL ENGINEERING 19, KIM SOO YEON & YANG SUN JU</li>
+        </ul>
+    </footer>
+
+
+</body>
+</html>

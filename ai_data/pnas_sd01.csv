@@ -1,0 +1,87 @@
+﻿DDI type,General sentence structure,list type
+1,Drug a can cause a decrease in the absorption of Drug b resulting in a reduced serum concentration and potentially a decrease in efficacy.,a
+2,Drug a can cause an increase in the absorption of Drug b resulting in an increased serum concentration and potentially a worsening of adverse effects.,a
+3,The absorption of Drug b can be decreased when combined with Drug a.,b
+4,The bioavailability of Drug b can be decreased when combined with Drug a.,b
+5,The bioavailability of Drug b can be increased when combined with Drug a.,b
+6,The metabolism of Drug b can be decreased when combined with Drug a.,b
+7,The metabolism of Drug b can be increased when combined with Drug a.,b
+8,The protein binding of Drug b can be decreased when combined with Drug a.,b
+9,The serum concentration of Drug b can be decreased when it is combined with Drug a.,b
+10,The serum concentration of Drug b can be increased when it is combined with Drug a.,b
+11,The serum concentration of the active metabolites of Drug b can be increased when Drug b is used in combination with Drug a.,b
+12,The serum concentration of the active metabolites of Drug b can be reduced when Drug b is used in combination with Drug a resulting in a loss in efficacy.,b
+13,The therapeutic efficacy of Drug b can be decreased when used in combination with Drug a.,b
+14,The therapeutic efficacy of Drug b can be increased when used in combination with Drug a.,b
+15,Drug a may decrease the excretion rate of Drug b which could result in a higher serum level.,a
+16,Drug a may increase the excretion rate of Drug b which could result in a lower serum level and potentially a reduction in efficacy.,a
+17,Drug a may decrease the cardiotoxic activities of Drug b.,a
+18,Drug a may increase the cardiotoxic activities of Drug b.,a
+19,Drug a may increase the central neurotoxic activities of Drug b.,a
+20,Drug a may increase the hepatotoxic activities of Drug b.,a
+21,Drug a may increase the nephrotoxic activities of Drug b.,a
+22,Drug a may increase the neurotoxic activities of Drug b.,a
+23,Drug a may increase the ototoxic activities of Drug b.,a
+24,Drug a may decrease effectiveness of Drug b as a diagnostic agent.,a
+25,The risk of a hypersensitivity reaction to Drug b is increased when it is combined with Drug a.,b
+26,The risk or severity of adverse effects can be increased when Drug a is combined with Drug b.,a
+27,The risk or severity of bleeding can be increased when Drug a is combined with Drug b.,a
+28,The risk or severity of heart failure can be increased when Drug b is combined with Drug a.,b
+29,The risk or severity of hyperkalemia can be increased when Drug a is combined with Drug b.,a
+30,The risk or severity of hypertension can be increased when Drug b is combined with Drug a.,b
+31,The risk or severity of hypotension can be increased when Drug a is combined with Drug b.,a
+32,The risk or severity of QTc prolongation can be increased when Drug a is combined with Drug b.,a
+33,Drug a may decrease the analgesic activities of Drug b.,a
+34,Drug a may decrease the anticoagulant activities of Drug b.,a
+35,Drug a may decrease the antihypertensive activities of Drug b.,a
+36,Drug a may decrease the antiplatelet activities of Drug b.,a
+37,Drug a may decrease the bronchodilatory activities of Drug b.,a
+38,Drug a may decrease the diuretic activities of Drug b.,a
+39,Drug a may decrease the neuromuscular blocking activities of Drug b.,a
+40,Drug a may decrease the sedative activities of Drug b.,a
+41,Drug a may decrease the stimulatory activities of Drug b.,a
+42,Drug a may decrease the vasoconstricting activities of Drug b.,a
+43,Drug a may increase the adverse neuromuscular activities of Drug b.,a
+44,Drug a may increase the analgesic activities of Drug b.,a
+45,Drug a may increase the anticholinergic activities of Drug b.,a
+46,Drug a may increase the anticoagulant activities of Drug b.,a
+47,Drug a may increase the antihypertensive activities of Drug b.,a
+48,Drug a may increase the antiplatelet activities of Drug b.,a
+49,Drug a may increase the antipsychotic activities of Drug b.,a
+50,Drug a may increase the arrhythmogenic activities of Drug b.,a
+51,Drug a may increase the atrioventricular blocking (AV block) activities of Drug b.,a
+52,Drug a may increase the bradycardic activities of Drug b.,a
+53,Drug a may increase the bronchoconstrictory activities of Drug b.,a
+54,Drug a may increase the central nervous system depressant (CNS depressant) activities of Drug b.,a
+55,Drug a may increase the central nervous system depressant (CNS depressant) and hypertensive activities of Drug b.,a
+56,Drug a may increase the constipating activities of Drug b.,a
+57,Drug a may increase the dermatologic adverse activities of Drug b.,a
+58,Drug a may increase the fluid retaining activities of Drug b.,a
+59,Drug a may increase the hypercalcemic activities of Drug b.,a
+60,Drug a may increase the hyperglycemic activities of Drug b.,a
+61,Drug a may increase the hyperkalemic activities of Drug b.,a
+62,Drug a may increase the hypertensive activities of Drug b.,a
+63,Drug a may increase the hypocalcemic activities of Drug b.,a
+64,Drug a may increase the hypoglycemic activities of Drug b.,a
+65,Drug a may increase the hypokalemic activities of Drug b.,a
+66,Drug a may increase the hyponatremic activities of Drug b.,a
+67,Drug a may increase the hypotensive activities of Drug b.,a
+68,Drug a may increase the hypotensive and central nervous system depressant (CNS depressant) activities of Drug b.,a
+69,Drug a may increase the immunosuppressive activities of Drug b.,a
+70,Drug a may increase the myelosuppressive activities of Drug b.,a
+71,Drug a may increase the myopathic rhabdomyolysis activities of Drug b.,a
+72,Drug a may increase the neuroexcitatory activities of Drug b.,a
+73,Drug a may increase the neuromuscular blocking activities of Drug b.,a
+74,Drug a may increase the orthostatic hypotensive activities of Drug b.,a
+75,Drug a may increase the photosensitizing activities of Drug b.,a
+76,Drug a may increase the QTc-prolonging activities of Drug b.,a
+77,Drug a may increase the respiratory depressant activities of Drug b.,a
+78,Drug a may increase the sedative activities of Drug b.,a
+79,Drug a may increase the serotonergic activities of Drug b.,a
+80,Drug a may increase the stimulatory activities of Drug b.,a
+81,Drug a may increase the tachycardic activities of Drug b.,a
+82,Drug a may increase the thrombogenic activities of Drug b.,a
+83,Drug a may increase the ulcerogenic activities of Drug b.,a
+84,Drug a may increase the vasoconstricting activities of Drug b.,a
+85,Drug a may increase the vasodilatory activities of Drug b.,a
+86,Drug a may increase the vasopressor activities of Drug b.,a

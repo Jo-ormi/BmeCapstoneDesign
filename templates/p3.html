@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DDI CASTER</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <!-- Stylesheets -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="{{url_for('static', filename='styles/app.css')}}" rel="stylesheet">
+
+    <style>
+        #cy {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+
+    <!-- Scripts -->
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js"></script>-->
+    <script type="text/javascript" src="{{url_for('static', filename='js/papaparse.js')}}" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/forecastr_v4.js')}}" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script type="module">
+        import cytoscape from "https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.15.1/cytoscape.esm.min.js";
+
+        const element = document.getElementById('res');
+        // alert(element.innerHTML);
+        var array = element.innerHTML.split("',",100);
+
+
+
+        var cy = cytoscape({
+            container: document.getElementById('cy'), // container to render in
+
+            style: [ // the stylesheet for the graph
+                {
+                    selector: 'node',
+                    style: {
+                        'background-color': '#666',
+                        'label': 'data(id)'
+                    }
+                },
+                {
+                    selector: 'edge',
+                    style: {
+                        'length' : 1,
+                        'width': 3,
+                        'line-color': '#ccc',
+                        'target-arrow-color': '#ccc',
+                        'curve-style': 'haystack'
+                    }
+                }
+            ],
+
+        });
+
+        for (var i = 0; i < array.length; i++){
+            var arr = array[i].split(',');
+            // alert(i)
+            // alert(arr)
+            // alert(arr.length)
+            // alert(arr[0])
+            for (var j = 0; j < arr.length; j++) {
+
+                cy.add([
+                    {data: { id: arr[j]}},
+                    {data: { id: i+'+'+j, source: arr[0], target: arr[j] }},
+                ]);
+
+                const layout = cy.layout({
+                    name: 'concentric'
+                });
+
+                layout.run();
+
+            }
+        }
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+    <div class='container'>
+
+            <div class="header">
+
+                <h3 class="data-narrative-logo"><a href="/step1">DDI CASTER</a></h3>
+
+                <nav>
+                    <ul class="nav-bar">
+                    <!--설명 연결-->
+                        <li><a class='nav-link aboutapp' href="/">about app</a></li>
+                    </ul>
+                </nav>
+
+                <div id='nav-bg'></div>
+                <ul class="nav nav-tabs">
+                    <li><a data-toggle="tab" href="/step1">STEP 1: SELECT DRUG PAIR</a></li>
+                    <li><a data-toggle="tab" href="/step2">STEP 2: VIEW MODEL RESULT</a></li>
+                    <li class="active"><a data-toggle="tab" href="/step3">STEP 3: VIEW MORE </a></li>
+
+                </ul>
+                <div id='subnav-bg'></div>
+
+        </div>
+
+        <section id='main'>
+
+            <div id="flow">
+
+                <div class="tab-content">
+                    <div id="step1" class="tab-pane fade in active">
+                      <div class='main-content'>
+
+                        <div id='forecast-content'>
+
+                        <h3 class='step-title'>cytoscape for target</h3>
+
+
+                        <div id='chart-container'>
+                            <br>
+                            <br>
+                            <span class="drug"><strong>DRUG A : {{drug_a}}</strong></span>
+                            <span class="drug"><strong>DRUG B : {{drug_b}}</strong></span>
+                            <br>
+                            <br>
+                            <div id='cy'></div>
+
+                            <div id='res' style="display:none">{{inter_result}}</div>
+
+
+                        </div>
+                            <div id='build-forecast-sidenav'>
+
+                            <h4 class='side-nav-title build-title'>More Information</h4>
+                            <div id='forecast-out'>
+                                <h5 class='sub-header'><b>intersection target</b></h5>
+                                {% if intersection_uniprots == [] %}
+                                    <h5> {{drug_a}}와 {{drug_b}} 간의 겹치는 target이 존재하지 않습니다. </h5><br>
+                                {% elif intersection_uniprots != None %}
+
+                                    {% for x in intersection_uniprots %}
+                                        <div style="display:inline">{{ x }}</div>
+                                    {% endfor%}
+                                {% endif %}
+                            </div>
+
+                            <div id='forecast-model-type'>
+
+                                <h5 class='sub-header'><b>related biological pathway</b></h5>
+                                {% if hy_result == [] %}
+                                    <h5> {{drug_a}}와 {{drug_b}} 간의 겹치는 target이 존재하지 않습니다. </h5><br>
+                                {% elif hy_result != None %}
+                                    {% for x in hy_result %}
+
+                                        <h5>{{x[1]}}</h5>{{x[0]}}
+
+                                    {% endfor%}
+                                {% endif %}
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div id="step2" class="tab-pane fade"></div>
+                    <div id="step3" class="tab-pane fade"></div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <ul>
+            <li><h4>About</h4></li>
+            <li><a data-element='outbound-cta' data-val='https://forecastr-io.herokuapp.com/app/' href="https://forecastr-io.herokuapp.com/app/">forecastr ALPHA</a></li>
+            <li>This is a site referring to UI and operation modules.</li>
+            <br/>
+            <li>MADE BY HUFS BIOMEDICAL ENGINEERING 19, KIM SOO YEON & YANG SUN JU</li>
+        </ul>
+
+
+    </footer>
+
+</body>
+</html>

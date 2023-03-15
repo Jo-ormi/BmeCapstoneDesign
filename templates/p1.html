@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DDI CASTER</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <!-- Stylesheets -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="{{url_for('static', filename='styles/app.css')}}" rel="stylesheet">
+
+    <!-- Scripts -->
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js"></script>-->
+<!--    <script type="text/javascript" src="{{url_for('static', filename='js/papaparse.js')}}" ></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/forecastr_v4.js')}}" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script type="module">
+        import cytoscape from "https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.15.1/cytoscape.esm.min.js";
+    </script>
+
+</head>
+<body>
+
+    <div class='container'>
+
+            <div class="header">
+
+                <h3 class="data-narrative-logo"><a href="/step1">DDI CASTER</a></h3>
+
+                <nav>
+                    <ul class="nav-bar">
+                    <!--설명 연결-->
+                        <li><a class='nav-link aboutapp' href="/">about app</a></li>
+                    </ul>
+                </nav>
+
+                <div id='nav-bg'></div>
+                <ul class="nav nav-tabs">
+                      <li class="active"><a data-toggle="tab" href="/step1">STEP 1: SELECT DRUG PAIR</a></li>
+                      <li><a data-toggle="tab" href="/step2">STEP 2: VIEW MODEL RESULT</a></li>
+                      <li><a data-toggle="tab" href="/step3">STEP 3: VIEW MORE </a></li>
+                </ul>
+                <div id='subnav-bg'></div>
+
+        </div>
+
+        <section id='main'>
+
+                <div id="flow">
+
+                    <div class="tab-content">
+
+                      <div id="step1" class="tab-pane fade in active">
+
+                        <div class='main-content'>
+
+                            <h3 class='step-title'>STEP 1: SELECT DRUG PAIR</h3><br/>
+
+                            <form action = "/step2" method = "POST">
+                                <div class="drug" style="background: #fbfbfb;">Drug A</div><br>
+                                <input style="line-height: 25px; width:300px" type = "text" name = "Drug_a" /><br><br><br><br>
+                                <div class="drug" style="background: #fbfbfb;">Drug B</div><br>
+                                <input style="line-height: 25px; width:300px" type = "text" name = "Drug_b" /><br><br><br><br>
+                                <input class="drug" style="background: #FFCD4A; line-height: 25px; width:300px" type = "submit" value = "Check the result" />
+                            </form>
+
+                        </div>
+
+
+
+
+
+                      <div id="step2" class="tab-pane fade">
+
+
+                    <div id="step3" class="tab-pane fade">
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+
+        <ul>
+            <li><h4>About</h4></li>
+            <li><a data-element='outbound-cta' data-val='https://forecastr-io.herokuapp.com/app/' href="https://forecastr-io.herokuapp.com/app/">forecastr ALPHA</a></li>
+            <li>This is a site referring to UI and operation modules.</li>
+            <br/>
+            <li>MADE BY HUFS BIOMEDICAL ENGINEERING 19, KIM SOO YEON & YANG SUN JU</li>
+        </ul>
+
+
+    </footer>
+
+</body>
+</html>
